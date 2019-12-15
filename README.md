@@ -1,15 +1,15 @@
-#Neo4j Apache Spark Connector using Ne4j's Bolt protocol
+Neo4j Apache Spark Connector using Ne4j's Bolt protocol
 
 Here is neo4j apache spark connector that loads data from neo4j as Spark Dataframe. I've done the implimentation using whatever knowledge of Apache spark I've. Please help me to make it better by rising bugs.
 
-##Build
+Build
 To build the connector run command ```mvn clean compile install```
 
-##Features
+Features
 
 It has 2 different modes to create Spark   from neo4j data.
 
-###Using Cypher Query
+Using Cypher Query
 For this mode user need to specify following data frame reader options
 -  ```url``` bolt url
 - ```user``` neo4j user name
@@ -21,7 +21,7 @@ Spark's Dataframe schema creation is done using output of the cypher query execu
 Limit should not pe present in cypher query.
 Partitioning is not sppuorted in this mode.
 
-###Using Node label
+Using Node label
 For this mode user load data for a single neo4j Node type by just providing node lable in data frame reader options. Partitioning is supported in this mode
 -  ```url``` bolt url
 - ```user``` neo4j user name
@@ -61,14 +61,8 @@ val dataFrame = session.read.option("url", "bolt://localhost:7687")
         .format("con.spark.neo4j.connector.ds.Neo4jSource").load()
 ```
 
-###Test dataset
+Test dataset
 Load CSV file ```movies.csv```present in ```src/test/resources/test_data/movies.csv``` in Neo4j for testing
 
-###Test Cases
+Test Cases
 please ref - ```con.spark.neo4j.connector.ds.test.TestNeo4jSource``` for test cases.
-
-
-
-
-
-
