@@ -1,4 +1,4 @@
-package con.spark.neo4j.connector.ds.test
+package com.spark.neo4j.connector.ds.test
 
 import org.apache.spark.SparkConf
 import org.apache.spark.sql.SparkSession
@@ -15,7 +15,7 @@ class TestNeo4jSource extends FunSpec with Matchers {
         .option("user", "neo4j")
         .option("password", "password")
         .option("cypher", "match (n:Movie) return n.id,n.title,n.year")
-        .format("con.spark.neo4j.connector.ds.Neo4jSource").load()
+        .format("com.spark.neo4j.connector.ds.Neo4jSource").load()
 
       dataFrame.printSchema()
       dataFrame.show(false)
@@ -30,7 +30,7 @@ class TestNeo4jSource extends FunSpec with Matchers {
         .option("upperBound", "100")
         .option("lowerBound", "1")
         .option("partitionsCount", "4")
-        .format("con.spark.neo4j.connector.ds.Neo4jSource").load()
+        .format("com.spark.neo4j.connector.ds.Neo4jSource").load()
 
       dataFrame.printSchema()
       dataFrame.show(false)

@@ -1,4 +1,4 @@
-package con.spark.neo4j.connector.ds
+package com.spark.neo4j.connector.ds
 
 import org.neo4j.driver.v1.{AuthTokens, Config, Driver, GraphDatabase}
 

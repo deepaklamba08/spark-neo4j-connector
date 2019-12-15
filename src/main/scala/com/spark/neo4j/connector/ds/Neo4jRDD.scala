@@ -1,4 +1,4 @@
-package con.spark.neo4j.connector.ds
+package com.spark.neo4j.connector.ds
 
 import java.util
 
