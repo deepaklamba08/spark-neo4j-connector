@@ -36,7 +36,7 @@ val dataFrame = session.read
         .option("user", "neo4j")
         .option("password", "password")
         .option("cypher", "match (n:Movie) return n.id,n.title,n.year")
-        .format("con.spark.neo4j.connector.ds.Neo4jSource").load()
+        .format("com.spark.neo4j.connector.ds.Neo4jSource").load()
 ```
 
  Parameters for partitioning
@@ -58,7 +58,7 @@ val dataFrame = session.read.option("url", "bolt://localhost:7687")
         .option("upperBound", "100")
         .option("lowerBound", "1")
         .option("partitionsCount", "4")
-        .format("con.spark.neo4j.connector.ds.Neo4jSource").load()
+        .format("com.spark.neo4j.connector.ds.Neo4jSource").load()
 ```
 
 Test dataset
